@@ -14,36 +14,21 @@ export const Content = () => {
 
   return (
     <main className="container py-5">
-      <div className="row g-4">
+  <div className="row g-4">
 
-        {/* FORMULARIO */}
-<div className="col-lg-9">
+    {/* PRODUCTOS */}
+    <div className="col-lg-9">
       <div className="row g-4">
         {productos.map((p) => (
-          <div className="col-md-6 col-xl-4" key={p.id}>
-            <div className="card h-100 shadow-sm border-0 rounded-4 text-center">
-
-              <div className="card-body">
-
-                <img
-                  src={p.img}
-                  alt={p.nombre}
-                  className="img-fluid mb-3"
-                  style={{ maxHeight: "180px", objectFit: "contain" }}
-                  onError={(e) => { e.target.src = 'https://via.placeholder.com/180'; }}
-                />
-
-                <h6 className="fw-bold">{p.nombre}</h6>
-
-                <p className="text-primary fw-bold fs-5">
-                  COP ${p.precio}
-                </p>
-
-                <span className={`badge ${p.badge} px-3 py-2`}>
-                  {p.stock}
-                </span>
-
-              </div>
+          <div key={p.id} className="col-md-6 col-xl-4">
+            <div className="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
+              <h5 className="fw-bold">{p.nombre}</h5>
+              <p className="text-primary fw-bold fs-4">
+                COP ${p.precio}
+              </p>
+              <span className={`badge ${p.badge} px-3 py-2`}>
+                {p.stock}
+              </span>
             </div>
           </div>
         ))}
@@ -52,34 +37,41 @@ export const Content = () => {
 
     {/* FORMULARIO */}
     <div className="col-lg-3">
-      <div className="card shadow border-0 rounded-5 h-50">
-        <div className="card-header bg-primary text-white py-4 rounded-top-9">
+      <div className="card shadow border-0 rounded-4 h-100 d-flex flex-column">
+
+        <div className="card-header bg-primary text-white py-3 rounded-top-4">
           <h6 className="mb-0 fw-bold">AGREGAR PRODUCTO</h6>
         </div>
-        <div className="card-body">
-          <form>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Nombre:</label>
-              <input type="text" className="form-control rounded-3" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Precio:</label>
-              <input type="text" className="form-control rounded-3" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Stock:</label>
-              <input type="text" className="form-control rounded-3" />
-            </div>
-            <br />
-            <button className="btn btn-success w-100 rounded-6 fw-bold py-2">
+
+        <div className="card-body d-flex flex-column">
+
+          <div className="mb-3">
+            <label className="form-label fw-semibold">Nombre:</label>
+            <input type="text" className="form-control rounded-3" />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label fw-semibold">Precio:</label>
+            <input type="text" className="form-control rounded-3" />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label fw-semibold">Stock:</label>
+            <input type="text" className="form-control rounded-3" />
+          </div>
+
+          {/* 👇 Esto empuja el botón abajo */}
+          <div className="mt-auto">
+            <button className="btn btn-success w-100 rounded-3">
               AGREGAR
             </button>
-          </form>
+          </div>
+
         </div>
       </div>
     </div>
 
   </div>
 </main>
-  )
+  );
 }

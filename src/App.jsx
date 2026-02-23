@@ -3,22 +3,32 @@ import { Content } from './features/layout/components/Content';
 import { Footer } from './features/layout/components/Footer';
 import { Article } from './features/layout/components/Article';
 import { Props } from './features/layout/components/Props';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="d-flex flex-column min-vh-100 bg-light">
+
+        {/* Header */}
         <Header />
-        <Routes>
-          <Route path='/' element={<Content />} />
-          <Route path='/articles' element={<Article />} />
-          <Route path='/props' element={<Props />} />
-        </Routes>
+
+        {/* Contenido principal */}
+        <div className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<Content />} />
+            <Route path="/articles" element={<Article />} />
+            <Route path="/props" element={<Props />} />
+          </Routes>
+        </div>
+
+        {/* Footer */}
         <Footer />
+
       </div>
-    </BrowserRouter>
-  )
+    </HashRouter>
+  );
 }
 
 export default App;
