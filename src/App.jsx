@@ -1,33 +1,70 @@
-import { Header } from './features/layout/components/Header';
-import { Content } from './features/layout/components/Content';
-import { Footer } from './features/layout/components/Footer';
-import { Article } from './features/layout/components/Article';
-import { Props } from './features/layout/components/Props';
-
-import { HashRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const productos = [
+    {
+      id: 1,
+      nombre: "El Vigilante",
+      precio: "3.500.000",
+      img: "/img/vinil1.jpg",
+      stock: "Disponible",
+      badge: "bg-success",
+    },
+    {
+      id: 2,
+      nombre: "Lo Mato",
+      precio: "150.000",
+      img: "/img/vinil2.jpg",
+      stock: "Pocas unidades",
+      badge: "bg-warning text-dark",
+    },
+    {
+      id: 3,
+      nombre: "Crime Pays",
+      precio: "280.000",
+      img: "/img/vinil3.jpg",
+      stock: "Agotado",
+      badge: "bg-danger",
+    },
+  ];
+
   return (
-    <HashRouter>
-      <div className="d-flex flex-column min-vh-100 bg-light">
+    <div className="container py-5">
+      <h2 className="text-center mb-5 fw-bold">Nuestros Productos</h2>
 
-        {/* Header */}
-        <Header />
+      <div className="row g-4">
+        {productos.map((p) => (
+          <div key={p.id} className="col-md-6 col-xl-4">
+            <div className="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
 
-        {/* Contenido principal */}
-        <div className="flex-grow-1">
-          <Routes>
-            <Route path="/" element={<Content />} />
-            <Route path="/articles" element={<Article />} />
-            <Route path="/props" element={<Props />} />
-          </Routes>
-        </div>
+              <img
+                src={p.img}
+                alt={p.nombre}
+                className="img-fluid mb-3"
+                style={{
+                  height: "200px",
+                  width: "100%",
+                  objectFit: "cover",
+                  borderRadius: "10px"
+                }}
+              />
 
-        {/* Footer */}
-        <Footer />
+              <h5 className="fw-bold">{p.nombre}</h5>
 
+              <p className="text-primary fw-bold fs-4">
+                COP ${p.precio}
+              </p>
+
+              <span className={`badge ${p.badge} px-3 py-2`}>
+                {p.stock}
+              </span>
+
+            </div>
+          </div>
+        ))}
       </div>
-    </HashRouter>
+    </div>
   );
 }
 
