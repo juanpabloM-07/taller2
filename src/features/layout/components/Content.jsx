@@ -1,16 +1,83 @@
 export const Content = () => {
 
-  const productos = [
-    { id: 1, nombre: 'El Vigilante', precio: '700.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil1.jpg` },
-    { id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil2.jpg` },
-    { id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: `${import.meta.env.BASE_URL}img/vinil3.jpg` },
-    { id: 4, nombre: 'La Gran Fuga', precio: '1.200.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil4.jpg` },
-    { id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil5.jpg` },
-    { id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil6.jpg` },
-    { id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil7.jpg` },
-    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil8.jpg` },
-    { id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil9.jpg` }
-  ];
+import React, { useState } from "react";
+import ProductCard from "./Productcard";
+import ProductForm from "./ProductFrom";
+
+
+const Products = () => {
+  const [products, setProducts] = useState([
+    {
+      name: "Auriculares Bluetooth",
+      price: 159900,
+      stock: 15,
+      category: "Audio",
+      image:
+        "https://i.blogs.es/a657de/oppo-enco-buds2-pro-cabecera/500_333.jpeg",
+    },
+    {
+      name: "Teclado Mecánico",
+      price: 249000,
+      stock: 5,
+      category: "Periféricos",
+      image:
+        "https://pcgamermedellin.com/wp-content/uploads/2023/11/teclado-mecanico-60-t-dagger-switch-rojo-3-1.jpg",
+    },
+    {
+      name: "Cámara Web HD",
+      price: 4390000,
+      stock: 2,
+      category: "Cámaras",
+      image:
+        "https://www.canon.com.mx/datacenter/image/resize-center/328x328/imagenesproducto/fichero/4989_G7X_Mark_III_01.jpg/",
+    },
+    {
+      name: "Nintendo Switch",
+      price: 1299000,
+      stock: 2,
+      category: "Juegos",
+      image:
+        "https://http2.mlstatic.com/D_NQ_NP_733474-MLA99974458897_112025-O.webp",
+    },
+  ]);
+
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
+
+  return (
+    <div className="container py-4">
+      <div className="row">
+
+        {/* IZQUIERDA → CARDS */}
+        <div className="col-lg-8">
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h4>Productos</h4>
+            <small className="text-muted">
+              Mostrando {products.length} productos
+            </small>
+          </div>
+
+          <div className="row g-4">
+            {products.map((product, index) => (
+              <div className="col-md-6" key={index}>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* DERECHA → FORMULARIO */}
+        <div className="col-lg-4">
+          <ProductForm addProduct={addProduct} />
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Products;
 
   return (
     <main className="container py-5">
@@ -70,11 +137,6 @@ export const Content = () => {
 
               <div className="mb-3">
                 <label className="form-label fw-semibold">Precio:</label>
-                <input type="text" className="form-control rounded-3" />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label fw-semibold">Stock:</label>
                 <input type="text" className="form-control rounded-3" />
               </div>
 
