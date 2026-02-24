@@ -1,15 +1,23 @@
 export const Content = () => {
 
   const productos = [
-    { id: 1, nombre: 'El Vigilante', precio: '700.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil1.jpg` },
-    { id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil2.jpg` },
-    { id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: `${import.meta.env.BASE_URL}img/vinil3.jpg` },
-    { id: 4, nombre: 'La Gran Fuga', precio: '1.200.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil4.jpg` },
-    { id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil5.jpg` },
-    { id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil6.jpg` },
-    { id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil7.jpg` },
-    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil8.jpg` },
-    { id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil9.jpg` }
+    { img: `${import.meta.env.BASE_URL}img/vinil1.jpg`, id: 1, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil2.jpg`, id: 2, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil3.jpg`, id: 3, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil4.jpg`, id: 4, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil5.jpg`, id: 5, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil6.jpg`, id: 6, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil7.jpg`, id: 7, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil8.jpg`, id: 8, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    { img: `${import.meta.env.BASE_URL}img/vinil9.jpg`, id: 9, nombre: 'El Cantante', precio: '1.500.000', stock: 'En stock', badge: 'bg-success' },
+    //{ id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil2.jpg` },
+    //{ id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: `${import.meta.env.BASE_URL}img/vinil3.jpg` },
+    //{ id: 4, nombre: 'La Gran Fuga', precio: '1.200.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil4.jpg` },
+    //{ id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil5.jpg` },
+    //{ id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil6.jpg` },
+    //{ id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil7.jpg` },
+    //{ id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: `${import.meta.env.BASE_URL}img/vinil8.jpg` },
+    //{ id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: `${import.meta.env.BASE_URL}img/vinil9.jpg` }
   ];
 
   return (
