@@ -66,10 +66,6 @@ export const Content = () => {
               <label className="form-label fw-semibold">Precio:</label>
               <input type="text" className="form-control rounded-3" />
             </div>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Stock:</label>
-              <input type="text" className="form-control rounded-3" />
-            </div>
             <br />
             <button className="btn btn-success w-100 rounded-6 fw-bold py-2">
               AGREGAR
