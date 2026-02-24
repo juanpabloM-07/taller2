@@ -1,25 +1,15 @@
-// 1. Importamos las imágenes (esto genera rutas seguras para GitHub)
-import vinil1 from '../../../../public/img/vinil1.jpg';
-import vinil2 from '../../../../public/img/vinil2.jpg';
-import vinil3 from '../../../../public/img/vinil3.jpg';
-import vinil4 from '../../../../public/img/vinil4.jpg';
-import vinil5 from '../../../../public/img/vinil5.jpg';
-import vinil6 from '../../../../public/img/vinil6.jpg';
-import vinil7 from '../../../../public/img/vinil7.jpg';
-import vinil8 from '../../../../public/img/vinil8.jpg';
-import vinil9 from '../../../../public/img/vinil9.jpg';
-
 export const Content = () => {
+
   const productos = [
-    { id: 1, nombre: 'El Vigilante', precio: '700.000', stock: 'En stock', badge: 'bg-success', img: vinil1 },
-    { id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: vinil2 },
-    { id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: vinil3 },
-    { id: 4, nombre: 'La Gran Fuga', precio: '1.200.000', stock: 'En stock', badge: 'bg-success', img: vinil4 },
-    { id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: vinil5 },
-    { id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: vinil6 },
-    { id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: vinil7 },
-    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: vinil8 },
-    { id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: vinil9 }
+    { id: 1, nombre: 'El Vigilante', precio: '700.000', stock: 'En stock', badge: 'bg-success', img: '/taller2/img/vinil1.jpg' },
+    { id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/taller2/img/vinil2.jpg' },
+    { id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: '/taller2/img/vinil3.jpg' },
+    { id: 4, nombre: 'La Gran Fuga', precio: '1.200.000', stock: 'En stock', badge: 'bg-success', img: '/taller2/img/vinil4.jpg' },
+    { id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/taller2/img/vinil5.jpg' },
+    { id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: '/taller2/img/vinil6.jpg' },
+    { id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: '/taller2/img/vinil7.jpg' },
+    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/taller2/img/vinil8.jpg' },
+    { id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: '/taller2/img/vinil9.jpg' }
   ];
 
   return (
@@ -32,10 +22,11 @@ export const Content = () => {
                 <div className="card h-100 shadow-sm border-0 rounded-4 text-center">
                   <div className="card-body">
                     <img
-                      src={p.img} // Ahora p.img es la variable importada arriba
+                      src={p.img}
                       alt={p.nombre}
                       className="img-fluid mb-3"
-                      style={{ maxHeight: "180px", objectFit: "contain" }}
+                      style={{ maxHeight: "150px", objectFit: "contain" }}
+                      onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=No+Image'; }}
                     />
                     <h6 className="fw-bold">{p.nombre}</h6>
                     <p className="text-primary fw-bold fs-5">COP ${p.precio}</p>
@@ -46,8 +37,28 @@ export const Content = () => {
             ))}
           </div>
         </div>
-        
-        {/* Tu columna del formulario se mantiene igual aquí abajo... */}
+
+        {/* Formulario a la derecha */}
+        <div className="col-lg-3">
+          <div className="card shadow border-0 rounded-5">
+            <div className="card-header bg-primary text-white py-4">
+              <h6 className="mb-0 fw-bold">AGREGAR PRODUCTO</h6>
+            </div>
+            <div className="card-body">
+              <form>
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">Nombre:</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">Precio:</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <button type="button" className="btn btn-success w-100 fw-bold py-2">AGREGAR</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
