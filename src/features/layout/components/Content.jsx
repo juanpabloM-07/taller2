@@ -1,6 +1,6 @@
 export const Content = () => {
 
-  const productos = [
+const productos = [
     { id: 1, nombre: 'El Vigilante', precio: '700.000', stock: 'En stock', badge: 'bg-success', img: '/img/vinil1.jpg' },
     { id: 2, nombre: 'Lo Mato', precio: '900.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/img/vinil2.jpg' },
     { id: 3, nombre: 'Crime Pays', precio: '860.000', stock: 'Agotado', badge: 'bg-secondary', img: '/img/vinil3.jpg' },
@@ -8,8 +8,7 @@ export const Content = () => {
     { id: 5, nombre: 'El Malo', precio: '1.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/img/vinil5.jpg' },
     { id: 6, nombre: 'Siembra', precio: '1.900.000', stock: 'En stock', badge: 'bg-success', img: '/img/vinil6.jpg' },
     { id: 7, nombre: 'El Juicio', precio: '980.000', stock: 'En stock', badge: 'bg-success', img: '/img/vinil7.jpg' },
-    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/img/vinil8.jpg' },
-    { id: 9, nombre: 'Celia Y Willie', precio: '1.800.000', stock: 'En stock', badge: 'bg-success', img: '/img/vinil9.jpg' }
+    { id: 8, nombre: 'The Hustler', precio: '2.000.000', stock: 'Pocas unidades', badge: 'bg-warning text-dark', img: '/img/vinil8.jpg' }
   ];
 
   return (
